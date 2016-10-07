@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>seq2seq_attention_model module &mdash; myproject 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="myproject 1.0 documentation" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-seq2seq_attention_model">
+<span id="seq2seq-attention-model-module"></span><h1>seq2seq_attention_model module<a class="headerlink" href="#module-seq2seq_attention_model" title="Permalink to this headline">¶</a></h1>
+<p>Sequence-to-Sequence with attention model for text summarization.</p>
+<dl class="class">
+<dt id="seq2seq_attention_model.HParams">
+<em class="property">class </em><code class="descclassname">seq2seq_attention_model.</code><code class="descname">HParams</code><span class="sig-paren">(</span><em>mode</em>, <em>min_lr</em>, <em>lr</em>, <em>batch_size</em>, <em>enc_layers</em>, <em>enc_timesteps</em>, <em>dec_timesteps</em>, <em>min_input_len</em>, <em>num_hidden</em>, <em>emb_dim</em>, <em>max_grad_norm</em>, <em>num_softmax_samples</em><span class="sig-paren">)</span><a class="headerlink" href="#seq2seq_attention_model.HParams" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">tuple</span></code></p>
+<dl class="attribute">
+<dt id="seq2seq_attention_model.HParams.batch_size">
+<code class="descname">batch_size</code><a class="headerlink" href="#seq2seq_attention_model.HParams.batch_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="seq2seq_attention_model.HParams.dec_timesteps">
+<code class="descname">dec_timesteps</code><a class="headerlink" href="#seq2seq_attention_model.HParams.dec_timesteps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 6</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="seq2seq_attention_model.HParams.emb_dim">
+<code class="descname">emb_dim</code><a class="headerlink" href="#seq2seq_attention_model.HParams.emb_dim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 9</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="seq2seq_attention_model.HParams.enc_layers">
+<code class="descname">enc_layers</code><a class="headerlink" href="#seq2seq_attention_model.HParams.enc_layers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 4</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="seq2seq_attention_model.HParams.enc_timesteps">
+<code class="descname">enc_timesteps</code><a class="headerlink" href="#seq2seq_attention_model.HParams.enc_timesteps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 5</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="seq2seq_attention_model.HParams.lr">
+<code class="descname">lr</code><a class="headerlink" href="#seq2seq_attention_model.HParams.lr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="seq2seq_attention_model.HParams.max_grad_norm">
+<code class="descname">max_grad_norm</code><a class="headerlink" href="#seq2seq_attention_model.HParams.max_grad_norm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 10</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="seq2seq_attention_model.HParams.min_input_len">
+<code class="descname">min_input_len</code><a class="headerlink" href="#seq2seq_attention_model.HParams.min_input_len" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 7</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="seq2seq_attention_model.HParams.min_lr">
+<code class="descname">min_lr</code><a class="headerlink" href="#seq2seq_attention_model.HParams.min_lr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="seq2seq_attention_model.HParams.mode">
+<code class="descname">mode</code><a class="headerlink" href="#seq2seq_attention_model.HParams.mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="seq2seq_attention_model.HParams.num_hidden">
+<code class="descname">num_hidden</code><a class="headerlink" href="#seq2seq_attention_model.HParams.num_hidden" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 8</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="seq2seq_attention_model.HParams.num_softmax_samples">
+<code class="descname">num_softmax_samples</code><a class="headerlink" href="#seq2seq_attention_model.HParams.num_softmax_samples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 11</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="seq2seq_attention_model.Seq2SeqAttentionModel">
+<em class="property">class </em><code class="descclassname">seq2seq_attention_model.</code><code class="descname">Seq2SeqAttentionModel</code><span class="sig-paren">(</span><em>hps</em>, <em>vocab</em>, <em>num_gpus=0</em><span class="sig-paren">)</span><a class="headerlink" href="#seq2seq_attention_model.Seq2SeqAttentionModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Wrapper for Tensorflow model graph for text sum vectors.</p>
+<dl class="method">
+<dt id="seq2seq_attention_model.Seq2SeqAttentionModel.build_graph">
+<code class="descname">build_graph</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#seq2seq_attention_model.Seq2SeqAttentionModel.build_graph" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="seq2seq_attention_model.Seq2SeqAttentionModel.decode_topk">
+<code class="descname">decode_topk</code><span class="sig-paren">(</span><em>sess</em>, <em>latest_tokens</em>, <em>enc_top_states</em>, <em>dec_init_states</em><span class="sig-paren">)</span><a class="headerlink" href="#seq2seq_attention_model.Seq2SeqAttentionModel.decode_topk" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the topK results and new decoder states.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="seq2seq_attention_model.Seq2SeqAttentionModel.encode_top_state">
+<code class="descname">encode_top_state</code><span class="sig-paren">(</span><em>sess</em>, <em>enc_inputs</em>, <em>enc_len</em><span class="sig-paren">)</span><a class="headerlink" href="#seq2seq_attention_model.Seq2SeqAttentionModel.encode_top_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the top states from encoder for decoder.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>sess: tensorflow session.
+enc_inputs: encoder inputs of shape [batch_size, enc_timesteps].
+enc_len: encoder input length of shape [batch_size]</dd>
+<dt>Returns:</dt>
+<dd>enc_top_states: The top level encoder states.
+dec_in_state: The decoder layer initial state.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="seq2seq_attention_model.Seq2SeqAttentionModel.run_decode_step">
+<code class="descname">run_decode_step</code><span class="sig-paren">(</span><em>sess</em>, <em>article_batch</em>, <em>abstract_batch</em>, <em>targets</em>, <em>article_lens</em>, <em>abstract_lens</em>, <em>loss_weights</em><span class="sig-paren">)</span><a class="headerlink" href="#seq2seq_attention_model.Seq2SeqAttentionModel.run_decode_step" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="seq2seq_attention_model.Seq2SeqAttentionModel.run_eval_step">
+<code class="descname">run_eval_step</code><span class="sig-paren">(</span><em>sess</em>, <em>article_batch</em>, <em>abstract_batch</em>, <em>targets</em>, <em>article_lens</em>, <em>abstract_lens</em>, <em>loss_weights</em><span class="sig-paren">)</span><a class="headerlink" href="#seq2seq_attention_model.Seq2SeqAttentionModel.run_eval_step" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="seq2seq_attention_model.Seq2SeqAttentionModel.run_train_step">
+<code class="descname">run_train_step</code><span class="sig-paren">(</span><em>sess</em>, <em>article_batch</em>, <em>abstract_batch</em>, <em>targets</em>, <em>article_lens</em>, <em>abstract_lens</em>, <em>loss_weights</em><span class="sig-paren">)</span><a class="headerlink" href="#seq2seq_attention_model.Seq2SeqAttentionModel.run_train_step" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/seq2seq_attention_model.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, tzhongaa.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      
+      |
+      <a href="_sources/seq2seq_attention_model.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

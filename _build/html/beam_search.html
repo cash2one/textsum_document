@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>beam_search module &mdash; myproject 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="myproject 1.0 documentation" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-beam_search">
+<span id="beam-search-module"></span><h1>beam_search module<a class="headerlink" href="#module-beam_search" title="Permalink to this headline">¶</a></h1>
+<p>Beam search module.</p>
+<p>Beam search takes the top K results from the model, predicts the K results for
+each of the previous K result, getting K*K results. Pick the top K results from
+K*K results, and start over again until certain number of results are fully
+decoded.</p>
+<dl class="class">
+<dt id="beam_search.BeamSearch">
+<em class="property">class </em><code class="descclassname">beam_search.</code><code class="descname">BeamSearch</code><span class="sig-paren">(</span><em>model</em>, <em>beam_size</em>, <em>start_token</em>, <em>end_token</em>, <em>max_steps</em><span class="sig-paren">)</span><a class="headerlink" href="#beam_search.BeamSearch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Beam search.</p>
+<dl class="method">
+<dt id="beam_search.BeamSearch.BeamSearch">
+<code class="descname">BeamSearch</code><span class="sig-paren">(</span><em>sess</em>, <em>enc_inputs</em>, <em>enc_seqlen</em><span class="sig-paren">)</span><a class="headerlink" href="#beam_search.BeamSearch.BeamSearch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs beam search for decoding.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>sess: tf.Session, session
+enc_inputs: ndarray of shape (enc_length, 1), the document ids to encode
+enc_seqlen: ndarray of shape (1), the length of the sequnce</dd>
+<dt>Returns:</dt>
+<dd><dl class="first last docutils">
+<dt>hyps: list of Hypothesis, the best hypotheses found by beam search,</dt>
+<dd>ordered by score</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="beam_search.Hypothesis">
+<em class="property">class </em><code class="descclassname">beam_search.</code><code class="descname">Hypothesis</code><span class="sig-paren">(</span><em>tokens</em>, <em>log_prob</em>, <em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#beam_search.Hypothesis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Defines a hypothesis during beam search.</p>
+<dl class="method">
+<dt id="beam_search.Hypothesis.Extend">
+<code class="descname">Extend</code><span class="sig-paren">(</span><em>token</em>, <em>log_prob</em>, <em>new_state</em><span class="sig-paren">)</span><a class="headerlink" href="#beam_search.Hypothesis.Extend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extend the hypothesis with result from latest step.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>token: latest token from decoding.
+log_prob: log prob of the latest decoded tokens.
+new_state: decoder output state. Fed to the decoder for next step.</dd>
+<dt>Returns:</dt>
+<dd>New Hypothesis with the results from latest step.</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="beam_search.Hypothesis.latest_token">
+<code class="descname">latest_token</code><a class="headerlink" href="#beam_search.Hypothesis.latest_token" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/beam_search.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, tzhongaa.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      
+      |
+      <a href="_sources/beam_search.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
