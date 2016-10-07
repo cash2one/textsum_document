@@ -1,2 +1,1 @@
-tensorflow
-numpy
+https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.10.0-cp27-none-linux_x86_64.whl
