@@ -18,4 +18,4 @@ six
 smart-open
 Sphinx
 sphinx-rtd-theme
-tensorflow
+tensorflow --ignore-installed 
