@@ -1,21 +1,2 @@
+tensorflow
 numpy
-beautifulsoup4
-breathe
-bz2file
-chardet
-Cython
-futures
-matplotlib
-nltk
-pep8
-Pillow
-protobuf
-pydot
-requests
-scipy
-seaborn
-six
-smart-open
-Sphinx
-sphinx-rtd-theme
---ignore-installed tensorflow
