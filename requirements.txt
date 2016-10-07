@@ -1,3 +1,4 @@
+numpy==1.11.1
 abstract-rendering==0.5.1
 alabaster==0.7.6
 anaconda-client==1.2.1
@@ -89,7 +90,6 @@ notebook==4.0.6
 npm==0.1.1
 numba==0.22.1
 numexpr==2.4.4
-numpy==1.11.1
 odo==0.3.4
 openpyxl==2.2.6
 optional-django==0.1.0
