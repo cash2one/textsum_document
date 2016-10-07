@@ -1,7 +1,6 @@
 numpy==1.11.1
 abstract-rendering==0.5.1
 alabaster==0.7.6
-anaconda-client==1.2.1
 argcomplete==1.0.0
 astropy==1.0.6
 atari-py==0.0.18
