@@ -1,4 +1,4 @@
-textsum
+API
 =======
 
 .. toctree::

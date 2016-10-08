@@ -6,13 +6,19 @@
 Welcome to myproject's documentation!
 =====================================
 
-Contents:
+API:
 
 .. toctree::
    :maxdepth: 2
 
    modules
 
+Install&Run:
+
+.. toctree::
+   :maxdepth: 2
+
+   README
 
 
 Indices and tables
