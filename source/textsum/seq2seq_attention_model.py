@@ -260,8 +260,9 @@ class Seq2SeqAttentionModel(object):
       enc_inputs: encoder inputs of shape [batch_size, enc_timesteps].
       enc_len: encoder input length of shape [batch_size]
     Returns:
-      enc_top_states: The top level encoder states.
-      dec_in_state: The decoder layer initial state.
+      tuple:
+        enc_top_states: The top level encoder states.\n
+        dec_in_state: The decoder layer initial state.
     """
     results = sess.run([self._enc_top_states, self._dec_in_state],
                        feed_dict={self._articles: enc_inputs,

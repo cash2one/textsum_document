@@ -1,9 +1,9 @@
-"""Example of Converting TextSum model data.
-Usage:
-python data_convert_example.py --command binary_to_text --in_file data/data --out_file data/text_data
-python data_convert_example.py --command text_to_binary --in_file data/text_data --out_file data/binary_data
-python data_convert_example.py --command binary_to_text --in_file data/binary_data --out_file data/text_data2
-diff data/text_data2 data/text_data
+"""Example of Converting TextSum model data.\n
+Usage:\n
+python data_convert_example.py --command binary_to_text --in_file data/data --out_file data/text_data\n
+python data_convert_example.py --command text_to_binary --in_file data/text_data --out_file data/binary_data\n
+python data_convert_example.py --command binary_to_text --in_file data/binary_data --out_file data/text_data2\n
+diff data/text_data2 data/text_data\n
 """
 
 import struct

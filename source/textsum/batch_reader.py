@@ -51,8 +51,7 @@ class Batcher(object):
       max_article_sentences: Max number of sentences used from article.
       max_abstract_sentences: Max number of sentences used from abstract.
       bucketing: Whether bucket articles of similar length into the same batch.
-      truncate_input: Whether to truncate input that is too long. Alternative is
-        to discard such examples.
+      truncate_input: Whether to truncate input that is too long. Alternative is to discard such examples.
     """
     self._data_path = data_path
     self._vocab = vocab
@@ -83,15 +82,16 @@ class Batcher(object):
   def NextBatch(self):
     """Returns a batch of inputs for seq2seq attention model.
 
-    Returns:
-      enc_batch: A batch of encoder inputs [batch_size, hps.enc_timestamps].
-      dec_batch: A batch of decoder inputs [batch_size, hps.dec_timestamps].
-      target_batch: A batch of targets [batch_size, hps.dec_timestamps].
-      enc_input_len: encoder input lengths of the batch.
-      dec_input_len: decoder input lengths of the batch.
-      loss_weights: weights for loss function, 1 if not padded, 0 if padded.
-      origin_articles: original article words.
-      origin_abstracts: original abstract words.
+    Returns:    
+      tuple:
+        enc_batch: A batch of encoder inputs [batch_size, hps.enc_timestamps].\n
+        dec_batch: A batch of decoder inputs [batch_size, hps.dec_timestamps].\n
+        target_batch: A batch of targets [batch_size, hps.dec_timestamps].\n
+        enc_input_len: encoder input lengths of the batch.\n
+        dec_input_len: decoder input lengths of the batch.\n
+        loss_weights: weights for loss function, 1 if not padded, 0 if padded.\n
+        origin_articles: original article words.\n
+        origin_abstracts: original abstract words.\n
     """
     enc_batch = np.zeros(
         (self._hps.batch_size, self._hps.enc_timesteps), dtype=np.int32)
