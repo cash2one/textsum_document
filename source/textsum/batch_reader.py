@@ -84,14 +84,14 @@ class Batcher(object):
 
     Returns:    
       tuple:
-        enc_batch: A batch of encoder inputs [batch_size, hps.enc_timestamps].\n
-        dec_batch: A batch of decoder inputs [batch_size, hps.dec_timestamps].\n
-        target_batch: A batch of targets [batch_size, hps.dec_timestamps].\n
-        enc_input_len: encoder input lengths of the batch.\n
-        dec_input_len: decoder input lengths of the batch.\n
-        loss_weights: weights for loss function, 1 if not padded, 0 if padded.\n
-        origin_articles: original article words.\n
-        origin_abstracts: original abstract words.\n
+        enc_batch: A batch of encoder inputs [batch_size, hps.enc_timestamps].
+        dec_batch: A batch of decoder inputs [batch_size, hps.dec_timestamps].
+        target_batch: A batch of targets [batch_size, hps.dec_timestamps].
+        enc_input_len: encoder input lengths of the batch.
+        dec_input_len: decoder input lengths of the batch.
+        loss_weights: weights for loss function, 1 if not padded, 0 if padded.
+        origin_articles: original article words.
+        origin_abstracts: original abstract words.
     """
     enc_batch = np.zeros(
         (self._hps.batch_size, self._hps.enc_timesteps), dtype=np.int32)
