@@ -232,6 +232,12 @@ def SnippetGen(text, start_tok, end_tok, inclusive=True):
 
 
 def GetExFeatureText(ex, key):
+  """
+  Get the value of key. Check tf.Example
+
+  Returns:
+    value correspoding to the key
+  """
   return ex.features.feature[key].bytes_list.value[0]
 
 
