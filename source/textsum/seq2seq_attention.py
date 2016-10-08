@@ -157,6 +157,9 @@ def _Eval(model, data_batcher, vocab=None):
 
 
 def main(unused_argv):
+  """
+  The main function to run textsum. Please refer to Install&Run as to how to run this code
+  """
   vocab = data.Vocab(FLAGS.vocab_path, 1000000)
   # Check for presence of required special tokens.
   assert vocab.WordToId(data.PAD_TOKEN) > 0

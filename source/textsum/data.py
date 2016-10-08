@@ -38,6 +38,15 @@ class Vocab(object):
   """Vocabulary class for mapping words and ids."""
 
   def __init__(self, vocab_file, max_size):
+    """
+    Args:
+        vocal_file: The file containing the vocabulary. Please refer to data/vocal
+        max_size: The size of vocabulary must not be lager than this value. Otherwise, it will raise exception
+
+    Raises:
+        ValueError: There are duplicate words in vocal_file
+        ValueError: The size of vacabulary is larger than max_size
+    """
     self._word_to_id = {}
     self._id_to_word = {}
     self._count = 0
@@ -57,16 +66,46 @@ class Vocab(object):
           raise ValueError('Too many words: >%d.' % max_size)
 
   def WordToId(self, word):
+    """
+    Map word to id
+
+    Args:
+        word: A string of word
+
+    Returns:
+      int:
+        The id of this word. If the word not in the vocabulary, return the id of unknown_token
+    """
     if word not in self._word_to_id:
       return self._word_to_id[UNKNOWN_TOKEN]
     return self._word_to_id[word]
 
   def IdToWord(self, word_id):
+    """
+    Map Id to word
+
+    Args:
+        word_id: One id
+
+    Returns:
+      str:
+        the word corresponding to the id
+    Raises:
+        ValueError: If the id is not in the vacabulary
+     
+    """
     if word_id not in self._id_to_word:
       raise ValueError('id not found in vocab: %d.' % word_id)
     return self._id_to_word[word_id]
 
   def NumIds(self):
+    """
+    Return the number of vacabulary
+
+    Returns:
+      int:
+        The number of vacabulary
+    """
     return self._count
 
 

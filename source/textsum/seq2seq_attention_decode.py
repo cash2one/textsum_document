@@ -40,6 +40,10 @@ class DecodeIO(object):
   """
 
   def __init__(self, outdir):
+    """
+    Args:
+        outdir: The dir to store the decode results
+    """
     self._cnt = 0
     self._outdir = outdir
     if not os.path.exists(self._outdir):

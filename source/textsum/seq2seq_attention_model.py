@@ -62,6 +62,12 @@ class Seq2SeqAttentionModel(object):
   """Wrapper for Tensorflow model graph for text sum vectors."""
 
   def __init__(self, hps, vocab, num_gpus=0):
+    """
+    Args:
+        hps: The nametuple containing hyperparameters
+        vocab: The vocabulary
+        num_gpu: Number of GPU used
+    """
     self._hps = hps
     self._vocab = vocab
     self._num_gpus = num_gpus
@@ -69,6 +75,25 @@ class Seq2SeqAttentionModel(object):
 
   def run_train_step(self, sess, article_batch, abstract_batch, targets,
                      article_lens, abstract_lens, loss_weights):
+    """
+    Training 
+
+    Args:
+        sess: tf.Session
+        article_batch: A batch_size of article
+        abstract_batch: A batch_size of abstract
+        targets: A batch_size of target. The shape is the same as abstract_batch, except that each instance of abstract_batch add one begin token and each instance of targets add one end token
+        article_lens: The length of article
+        abstract_lens: The length of abstract
+        loss_weights: Loss
+
+    Returns: 
+      list:
+        _train_op: Training op
+        ._summaries: Some results
+        _loss: loss
+        global_step: step
+    """
     to_return = [self._train_op, self._summaries, self._loss, self.global_step]
     return sess.run(to_return,
                     feed_dict={self._articles: article_batch,
@@ -80,6 +105,25 @@ class Seq2SeqAttentionModel(object):
 
   def run_eval_step(self, sess, article_batch, abstract_batch, targets,
                     article_lens, abstract_lens, loss_weights):
+    """
+    Training 
+
+    Args:
+        sess: tf.Session
+        article_batch: A batch_size of article
+        abstract_batch: A batch_size of abstract
+        targets: A batch_size of target. The shape is the same as abstract_batch, except that each instance of abstract_batch add one begin token and each instance of targets add one end token
+        article_lens: The length of article
+        abstract_lens: The length of abstract
+        loss_weights: Loss
+
+    Returns: 
+      list:
+        ._summaries: Some results
+        _loss: loss
+        global_step: step
+    """
+
     to_return = [self._summaries, self._loss, self.global_step]
     return sess.run(to_return,
                     feed_dict={self._articles: article_batch,
@@ -91,6 +135,24 @@ class Seq2SeqAttentionModel(object):
 
   def run_decode_step(self, sess, article_batch, abstract_batch, targets,
                       article_lens, abstract_lens, loss_weights):
+    """
+    Training 
+
+    Args:
+        sess: tf.Session
+        article_batch: A batch_size of article
+        abstract_batch: A batch_size of abstract
+        targets: A batch_size of target. The shape is the same as abstract_batch, except that each instance of abstract_batch add one begin token and each instance of targets add one end token
+        article_lens: The length of article
+        abstract_lens: The length of abstract
+        loss_weights: Loss
+
+    Returns: 
+      list:
+        ._outputs: decode results
+        global_step: step
+    """
+
     to_return = [self._outputs, self.global_step]
     return sess.run(to_return,
                     feed_dict={self._articles: article_batch,
@@ -270,7 +332,21 @@ class Seq2SeqAttentionModel(object):
     return results[0], results[1][0]
 
   def decode_topk(self, sess, latest_tokens, enc_top_states, dec_init_states):
-    """Return the topK results and new decoder states."""
+    """Return the topK results and new decoder states.
+    
+    Args:
+        sess: tf.Session
+        latest_tokens: The lastest token
+        enc_top_states: The top level encoder states
+        dec_init_states: The decoder layer initial state
+    
+    
+    Returns:
+      tuple:
+        ids: The ids of word
+        probs: The probability
+        new_state: New states
+    """
     feed = {
         self._enc_top_states: enc_top_states,
         self._dec_in_state:
@@ -288,6 +364,9 @@ class Seq2SeqAttentionModel(object):
     return ids, probs, new_states
 
   def build_graph(self):
+    """
+    Build computation graph of tensorflow
+    """
     self._add_placeholders()
     self._add_seq2seq()
     self.global_step = tf.Variable(0, name='global_step', trainable=False)
