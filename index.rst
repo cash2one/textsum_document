@@ -18,7 +18,7 @@ Install&Run:
 .. toctree::
    :maxdepth: 2
 
-   README
+   source/textsum/README
 
 
 Indices and tables
