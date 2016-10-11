@@ -1,7 +1,7 @@
 # install&Run
-    As for how to install the package in testsum, please refer to source/textsum/README.md
+    As for how to install the package in textsum, please refer to source/textsum/README.md
 
-# The program in testsum is used to generate abstract from article
+# The program in textsum is used to generate abstract from article
 
 # Input file
     As for the format of input file, please refer to source/textsum/data
@@ -24,7 +24,7 @@
     For the value of article or abstract, <d> and </d> represents the document, <p> and </p> represents the paragraph, <s> and </s> represents the sentence
 
 # Output
-    As shown in source/testsum/README.md. The program will generate dir log_root log_root/train in training, /log_root/eval in evaluation and decode in decoding
+    As shown in source/textsum/README.md. The program will generate dir log_root log_root/train in training, /log_root/eval in evaluation and decode in decoding
     The final results of decoding will be shown in decode dir.
     The file with the name ref.. is the groundtruth
     The file with the name decode.. is the result
