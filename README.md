@@ -28,3 +28,21 @@
     The final results of decoding will be shown in decode dir.
     The file with the name ref.. is the groundtruth
     The file with the name decode.. is the result
+
+
+# Program Work flow
+    As for training, please refer to picture/train.jpg. 
+    As for test, please refer to picture/test.jpg.
+    As for the module dependence, please refer to picture work_flow.jpg.
+## work_flow
+    seq2seq_attention.py is the main program. There are three model(train, eval , decoder). train model is training model. eval model is used to validation. decoder model is used to write the decode write.
+    data.py is the program used to generate data
+    batch_reader.py is the progam used to generate batch data
+    seq2seq_lib.py stores some useful function
+    seq2seq_attention_model.py is the program used to generate computing graph, as shown in picture/train.jpg and picture/test.jpg
+    seq2seq_attention_decoder.py is the program used to write decoder result in decode model(namely test model)
+    beam_search.py is used in decode model to program nbest results.
+
+# API
+    The API for each modules are shown in [here](http://textsum-document.readthedocs.io/en/latest/modules.html)
+    
