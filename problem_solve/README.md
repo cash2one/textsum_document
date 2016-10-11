@@ -21,7 +21,7 @@ Please check the code in [here](https://github.com/tensorflow/models/blob/master
 
 
 ## attention mechanism
-The code is [here](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/ops/seq2seq.py). The mechanisum in in function attention_decoder. Check the code below: s is e_ij, a is a_ij, d is c_i (please check the comment below and check the paper in [here](https://arxiv.org/pdf/1409.0473v7.pdf)
+The code is [here](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/ops/seq2seq.py). The mechanism in in function attention_decoder. Check the code below: s is e_ij, a is a_ij, d is c_i (please check the comment below and check the paper in [here](https://arxiv.org/pdf/1409.0473v7.pdf)
     
     def attention(query):
       """Put attention masks on hidden using hidden_features and query."""
