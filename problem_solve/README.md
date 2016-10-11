@@ -49,3 +49,5 @@ The code is [here](https://github.com/tensorflow/tensorflow/blob/master/tensorfl
           ds.append(array_ops.reshape(d, [-1, attn_size]))
       return ds
 
+## nbest
+Please check the code [beam_search.py](https://github.com/tensorflow/models/blob/master/textsum/beam_search.py)
