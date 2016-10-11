@@ -43,6 +43,5 @@
     seq2seq_attention_decoder.py is the program used to write decoder result in decode model(namely test model)
     beam_search.py is used in decode model to program nbest results.
 
-# API
-    The API for each modules are shown in [here](http://textsum-document.readthedocs.io/en/latest/modules.html)
+# API are shown in  [here](http://textsum-document.readthedocs.io/en/latest/modules.html)
     
