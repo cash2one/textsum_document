@@ -1,10 +1,10 @@
 # install&Run
-    As for how to install the package in testsum, please refer to source/teXtsum/README.md
+    As for how to install the package in testsum, please refer to source/textsum/README.md
 
 # The program in testsum is used to generate abstract from article
 
 # Input file
-    As for the format of input file, please refer to source/teXtsum/data
+    As for the format of input file, please refer to source/textsum/data
     There are three files in /source/textsum/data, namely, vocal, data, test_data
 ## Please pay attention, the program only depends on vocal, data
 ## vocal
