@@ -33,7 +33,9 @@
 # Program Work flow
     As for training, please refer to picture/train.jpg. 
     As for test, please refer to picture/test.jpg.
-    As for the module dependence, please refer to picture work_flow.jpg.
+    As for the module dependence, please refer to picture work_flow.jpg.    
+here also refer to [here](https://www.tensorflow.org/versions/r0.11/tutorials/seq2seq/index.html) for the official description of seq2seq
+
 ## work_flow
     seq2seq_attention.py is the main program. There are three model(train, eval , decoder). train model is training model. eval model is used to validation. decoder model is used to write the decode write.
     data.py is the program used to generate data
