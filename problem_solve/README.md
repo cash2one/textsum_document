@@ -9,6 +9,7 @@ Please check the code in [here](https://github.com/tensorflow/models/blob/master
     emb_encoder_inputs = [tf.nn.embedding_lookup(embedding, x) for x in encoder_inputs]
     emb_decoder_inputs = [tf.nn.embedding_lookup(embedding, x) for x in decoder_inputs]
 
+We need to modify the code above to the code below
 
     # Embedding shared by the input and outputs.
     with tf.variable_scope('embedding'), tf.device('/cpu:0'):
