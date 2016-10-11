@@ -44,6 +44,6 @@
     beam_search.py is used in decode model to program nbest results.
 
 # API are shown in  [here](http://textsum-document.readthedocs.io/en/latest/modules.html)
-# The picture for training ![](https://github.com/tzhongaa/textsum_document/blob/master/picture/train.jpg)
-# The picture for test ![](https://github.com/tzhongaa/textsum_document/blob/master/picture/test.jpg)
-# The picture for the work_flow ![](https://github.com/tzhongaa/textsum_document/blob/master/picture/work_flow.jpg)
+# The picture for [training](https://github.com/tzhongaa/textsum_document/blob/master/picture/train.jpg)
+# The picture for [test](https://github.com/tzhongaa/textsum_document/blob/master/picture/test.jpg)
+# The picture for the [work_flow](https://github.com/tzhongaa/textsum_document/blob/master/picture/work_flow.jpg)
